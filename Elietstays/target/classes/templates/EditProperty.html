@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/custom-styles.css" th:href="@{/css/custom-styles.css}" />
+	 <title>Edit Property</title>
+</head>
+<body>
+<div class="container mt-5">
+    <h2 style="color: wheat;">Edit Property</h2>
+    <form th:action="@{/updateProperty}" method="post" enctype="multipart/form-data" th:object="${property}">
+        <input type="hidden" th:field="*{propertyId}"/>
+        
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label style="color: wheat;" for="description">Description</label>
+                <input type="text" class="form-control" id="description" th:field="*{description}" />
+            </div>
+            <div style="color: wheat;" class="form-group col-md-6">
+                <label for="price">Price</label>
+                <input type="number" class="form-control" id="price" th:field="*{price}" />
+            </div>
+        </div>
+        
+        <div style="color: wheat;" class="form-row">
+            <div class="form-group col-md-6">
+                <label for="status">Status</label>
+                <input type="text" class="form-control" id="status" th:field="*{status}" />
+            </div>
+            <div style="color: wheat;" class="form-group col-md-6">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" th:field="*{address}" />
+            </div>
+        </div>
+        
+        <div style="color: wheat;" class="form-row">
+            <div class="form-group col-md-6">
+                <label for="city">City</label>
+                <input type="text" class="form-control" id="city" th:field="*{city}" />
+            </div>
+            <div style="color: wheat;" class="form-group col-md-6">
+                <label for="state">State</label>
+                <input type="text" class="form-control" id="state" th:field="*{state}" />
+            </div>
+        </div>
+        
+        <div style="color: wheat;" class="form-row">
+            <div class="form-group col-md-6">
+                <label for="country">Country</label>
+                <input type="text" class="form-control" id="country" th:field="*{country}" />
+            </div>
+            <div style="color: wheat;" class="form-group col-md-6">
+                <label for="bedrooms">Bedrooms</label>
+                <input type="number" class="form-control" id="bedrooms" th:field="*{bedrooms}" />
+            </div>
+        </div>
+        
+        <div style="color: wheat;" class="form-row">
+            <div class="form-group col-md-6">
+                <label for="bathrooms">Bathrooms</label>
+                <input type="number" class="form-control" id="bathrooms" th:field="*{bathrooms}" />
+            </div>
+            <div style="color: wheat;" class="form-group col-md-6">
+                <label for="squareFeet">Square Feet</label>
+                <input type="number" class="form-control" id="squareFeet" th:field="*{squareFeet}" />
+            </div>
+        </div>
+        
+        <div style="color: wheat;" class="form-row">
+            <div class="form-group col-md-6">
+                <label for="parking">Parking</label>
+                <input type="number" class="form-control" id="parking" th:field="*{parking}" />
+            </div>
+            <div  style="color: wheat;" class="form-group col-md-6">
+                <label for="picture">Picture</label>
+                <input type="file" class="form-control-file" id="pic"  name ="pic"  />
+            </div>
+        </div>
+        
+        <div style="color: wheat;" class="form-row">
+            <div class="form-group col-md-6">
+                <label for="agentName">Agent Name</label>
+                <input type="text" class="form-control" id="agentName" th:field="*{agentName}" />
+            </div>
+            <div style="color: wheat;"  class="form-group col-md-6">
+                <label for="agentContact">Agent Contact</label>
+                <input type="text" class="form-control" id="agentContact" th:field="*{agentContact}" />
+            </div>
+        </div>
+        
+        <div style="color: wheat;" class="form-row">
+            <div class="form-group col-md-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="pool" th:field="*{pool}" />
+                    <label class="form-check-label" for="pool">Pool</label>
+                </div>
+            </div>
+            <div style="color: wheat;" class="form-group col-md-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="fireplace" th:field="*{fireplace}" />
+                    <label class="form-check-label" for="fireplace">Fireplace</label>
+                </div>
+            </div>
+        </div>
+        
+        <div  class="form-row">
+            <div  style="color: wheat;" class="form-group col-md-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="garden" th:field="*{garden}" />
+                    <label class="form-check-label" for="garden">Garden</label>
+                </div>
+            </div>
+            <div style="color: wheat;" class="form-group col-md-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="balcony" th:field="*{balcony}" />
+                    <label class="form-check-label" for="balcony">Balcony</label>
+                </div>
+            </div>
+        </div>
+        
+        <div   class="form-row">
+            <div style="color: wheat;" class="form-group col-md-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="basement" th:field="*{basement}" />
+                    <label class="form-check-label" for="basement">Basement</label>
+                </div>
+            </div>
+            <div style="color: wheat;" class="form-group col-md-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="furnished" th:field="*{furnished}" />
+                    <label class="form-check-label" for="furnished">Furnished</label>
+                </div>
+            </div>
+        </div>
+        
+        <div  class="form-row">
+            <div style="color: wheat;" class="form-group col-md-6">
+                <label for="latitude">Latitude</label>
+                <input type="number" class="form-control" id="latitude"  min="-90" max="90" step="any"  th:field="*{latitude}" />
+            </div>
+            <div style="color: wheat;" class="form-group col-md-6">
+                <label for="longitude">Longitude</label>
+                <input type="number" class="form-control" id="longitude"  min="-90" max="90" step="any"  th:field="*{longitude}" />
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Update Property</button>
+    </form>
+</div>
+</body>
+</html>

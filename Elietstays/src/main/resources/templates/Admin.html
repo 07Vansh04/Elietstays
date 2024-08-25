@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/custom-styles.css" th:href="@{/css/custom-styles.css}" />
+	
+	 <style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+		#toggleFormBtn {
+		          background: linear-gradient(120deg, rgb(0, 64, 128) 0%, rgb(64, 128, 128) 100%);
+		          color: white;
+		          border: none;
+		          border-radius: 50px;
+		          font-size: 1rem;
+		          padding: 0.75rem 1.5rem;
+		          transition: background 0.7s, transform 0.9s;
+		          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+		          display: inline-block;
+		      }
+
+		      #toggleFormBtn:hover {
+		          background: linear-gradient(135deg, rgb(0, 64, 0) 0%, rgb(0, 64, 64) 100%);
+		          transform: translateY(-2px);
+		      }
+
+		      #toggleFormBtn:active {
+		          transform: translateY(0);
+		      }
+			  .flexe{
+				display: flex;
+			  }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="mt-5">Admin Panel</h1>
+
+        <button class="btn btn-primary mt-3" id="toggleFormBtn">Add Property</button>
+
+        <div class="wrapper" id="propertyForm">
+            <form   th:action="@{/postproperty}" method="post" enctype="multipart/form-data" >
+                <h1>Add Property</h1>
+				<div class="flexe">
+                <div class="input-box">
+                    <input type="text" class="form-control" id="description" name="description"  placeholder="Description" required>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="form-control" id="price" name="price" placeholder="Price" >
+                </div>
+				</div>
+				
+				<div class="flexe">
+                <div class="input-box">
+                    <input type="text" class="form-control" id="status" name="status" placeholder="Status" required>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="form-control" id="address" name="address" placeholder="Address" required>
+                </div>
+				</div>
+				
+				<div class="flexe">
+                <div class="input-box">
+                    <input type="text" class="form-control" id="city" name="city" placeholder="City" required>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="form-control" id="state" name="state" placeholder="State" required>
+                </div>
+				</div>
+				
+				<div class="flexe">
+                <div class="input-box">
+                    <input type="text" class="form-control" id="country" name="country" placeholder="Country" required>
+                </div>
+                <div class="input-box">
+                    <input type="number" class="form-control" id="bedrooms" name="bedrooms" placeholder="Bedrooms"
+                        required>
+                </div>
+				</div>
+				
+				<div class="flexe">
+                <div class="input-box">
+                    <input type="number" class="form-control" id="bathrooms" name="bathrooms" placeholder="Bathrooms"
+                        required>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="form-control" id="squareFeet" name="squareFeet" placeholder="Square Feet"
+                        required>
+                </div>
+				</div>
+				
+				<div class="flexe">
+                <div class="input-box">
+                    <input type="number" class="form-control" id="parking" name="parking" placeholder="Parking Spaces"
+                        required>
+                </div>
+                <div class="input-box">
+                    <input type="file" class="form-control" id="picture" name="pic" placeholder="Picture">
+                </div>
+				</div>
+				
+				<div class="flexe">
+                <div class="input-box">
+                    <input type="text" class="form-control" id="agentName" name="agentName" placeholder="Agent Name"
+                        required>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="form-control" id="agentContact" name="agentContact"
+                        placeholder="Agent Contact" required>
+                </div>
+				</div>
+				
+				
+				<div class="flexe">
+                <div class="input-box">
+                    <label for="pool" class="form-label">Pool</label>
+                    <input type="checkbox" id="pool" name="pool">
+                </div>
+                <div class="input-box">
+                    <label for="fireplace" class="form-label">Fireplace</label>
+                    <input type="checkbox" id="fireplace" name="fireplace">
+                </div>
+				</div>
+				
+				<div class="flexe">
+                <div class="input-box">
+                    <label for="garden" class="form-label">Garden</label>
+                    <input type="checkbox" id="garden" name="garden">
+                </div>
+                <div class="input-box">
+                    <label for="balcony" class="form-label">Balcony</label>
+                    <input type="checkbox" id="balcony" name="balcony">
+                </div>
+				</div>
+				
+				<div class="flexe">
+                <div class="input-box">
+                    <label for="basement" class="form-label">Basement</label>
+                    <input type="checkbox" id="basement" name="basement">
+                </div>
+                <div class="input-box">
+                    <label for="furnished" class="form-label">Furnished</label>
+                    <input type="checkbox" id="furnished" name="furnished">
+                </div>
+				</div>
+				
+				<div class="flexe">
+                <div class="input-box">
+                    <input type="number" class="form-control" id="latitude" name="latitude" placeholder="Latitude"
+                        step="0.00000001" required>
+                </div>
+                <div class="input-box">
+                    <input type="number" class="form-control" id="longitude" name="longitude" placeholder="Longitude"
+                        step="0.00000001" required>
+                </div>
+				</div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+        <!-- Display submitted property info below the button -->
+        <!--<div id="propertyDisplay" class="property-card">
+            <h3>Submitted Properties</h3>
+            <div th:if="${properties != null}">
+                <div th:each="property : ${properties}" class="property-card">
+                    <h4 th:text="${property.description}">Description</h4>
+                    <p>Price: $<span th:text="${property.price}">Price</span></p>
+                    <p>Status: <span th:text="${property.status}">Status</span></p>
+                    <p>Address: <span th:text="${property.address}">Address</span>, <span th:text="${property.city}">City</span>,
+                        <span th:text="${property.state}">State</span>, <span th:text="${property.country}">Country</span></p>
+                    <p>Bedrooms: <span th:text="${property.bedrooms}">Bedrooms</span>, Bathrooms: <span
+                            th:text="${property.bathrooms}">Bathrooms</span></p>
+                    <p>Square Feet: <span th:text="${property.squareFeet}">Square Feet</span>, Parking Spaces: <span
+                            th:text="${property.parking}">Parking Spaces</span></p>
+                    <p>Agent: <span th:text="${property.agentName}">Agent Name</span> (<span
+                            th:text="${property.agentContact}">Agent Contact</span>)</p>
+                    <p>Features:</p>
+                    <ul>
+                        <li>Pool: <span th:text="${property.pool} ? 'Yes' : 'No'">Pool</span></li>
+                        <li>Fireplace: <span th:text="${property.fireplace} ? 'Yes' : 'No'">Fireplace</span></li>
+                        <li>Garden: <span th:text="${property.garden} ? 'Yes' : 'No'">Garden</span></li>
+                        <li>Balcony: <span th:text="${property.balcony} ? 'Yes' : 'No'">Balcony</span></li>
+                        <li>Basement: <span th:text="${property.basement} ? 'Yes' : 'No'">Basement</span></li>
+                        <li>Furnished: <span th:text="${property.furnished} ? 'Yes' : 'No'">Furnished</span></li>
+                    </ul>
+                    <p>Location: Latitude <span th:text="${property.latitude}">Latitude</span>, Longitude <span
+                            th:text="${property.longitude}">Longitude</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+
+    <script>
+        document.getElementById('toggleFormBtn').addEventListener('click', function () {
+            const form = document.getElementById('propertyForm');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        });
+    </script>
+</body>
+
+</html>
